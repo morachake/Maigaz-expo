@@ -2,10 +2,11 @@ import React from 'react'
 import { StyleSheet, Text, TouchableOpacity } from 'react-native'
 import Icon  from 'react-native-vector-icons/MaterialCommunityIcons'
 import { COLORS } from '../../../constants/Index'
-export default function ProfileBtn({heading,iconName}) {
+export default function ProfileBtn({heading,iconName,onPress}) {
     return (
         <TouchableOpacity
             style={styles.profileButton}
+            onPress={onPress}
         >
             <Text style={styles.heading}>{heading}</Text>
             <Icon
