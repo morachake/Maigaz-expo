@@ -1,14 +1,14 @@
 import React from 'react'
 import { Image, StyleSheet, Text, View } from "react-native";
+import { SafeAreaView } from 'react-native-safe-area-context';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import Header from '../../components/Header'
+import Header from '../../components/Header';
 import { COLORS ,IMAGES} from '../../constants/Index';
 import ProfileBtn from './components/ProfileBtn';
 export default function Profile() {
     return ( 
-        <View style={ { backgroundColor: '#E5E5E5',flex:1}}>
-            <Header
-            />
+        <SafeAreaView style={{ backgroundColor: '#E5E5E5', flex: 1 }}> 
+            <View >
             <Text style={styles.textHeader}>
                 My Profile
             </Text>
@@ -45,7 +45,8 @@ export default function Profile() {
                     iconName="logout"
                 />
             </View>
-        </View>
+            </View>
+        </SafeAreaView>
     )
 }
 
@@ -55,7 +56,9 @@ const styles = StyleSheet.create({
         paddingBottom: 20,
         fontSize: 34,
         color: COLORS.lightSecondary,
-        fontFamily:'Inter-Bold'
+        fontFamily: 'Inter-Bold',
+        textAlign: 'center',
+        marginVertical: 10
     },
     image: {
         marginTop: '-10%',

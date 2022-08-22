@@ -29,14 +29,7 @@ export default function BottomTabs() {
                                 color={focused ? COLORS.primary : "#ccc"}
                             />
                         );
-                        case "Favourites":
-                        return (
-                            <Icon
-                                name="cards-heart-outline"
-                                size={size}
-                                color={focused ? COLORS.primary : "#ccc"}
-                            />
-                            )
+                        
                             case "Cart":
                                 return (
                                 <Icon
@@ -45,6 +38,14 @@ export default function BottomTabs() {
                                     color={focused ? COLORS.primary : "#ccc"}
                                 />
                                 )
+                                case "Favourites":
+                                    return (
+                                        <Icon
+                                            name="cards-heart-outline"
+                                            size={size}
+                                            color={focused ? COLORS.primary : "#ccc"}
+                                        />
+                                        )
                                 case "Profile":
                                     return (
                                     <Icon
@@ -59,8 +60,8 @@ export default function BottomTabs() {
                 })}
                 >
             <Tab.Screen name="Home" component={HomeScreen} />
-            <Tab.Screen name="Favourites" component={Favourites} />   
             <Tab.Screen name="Cart" component={Cart} />
+            <Tab.Screen name="Favourites" component={Favourites} />   
             <Tab.Screen name="Profile" component={Profile} />
             </Tab.Navigator>
     
