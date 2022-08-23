@@ -6,7 +6,7 @@ export default function CartProduct() {
     return (
         <View style={styles.cartProduct}>
             <Image
-                source={require('../../../assets/images/Gas.png')}
+                source={require('../../../assets/images/gas.png')}
             />
             <View style={{ alignItems: 'center',justifyContent: 'space-evenly',marginHorizontal:10}}>
                 <View style={styles.topcont}>
