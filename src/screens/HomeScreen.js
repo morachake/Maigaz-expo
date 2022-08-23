@@ -6,9 +6,11 @@ import Home from '../components/Home'
 const HomeScreen = () => {
     const Stack = createNativeStackNavigator()
   return (
-    <Stack.Navigator>
-        <Stack.Screen name="HomeComponent" component={Home} options={{ headerShown: false }} />
-    </Stack.Navigator>
+    <>
+      <Stack.Navigator>
+          <Stack.Screen name="HomeComponent" component={Home} options={{ headerShown: false }} />
+      </Stack.Navigator>
+    </>
   )
 }
 
