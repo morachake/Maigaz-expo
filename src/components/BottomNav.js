@@ -5,12 +5,16 @@ import { Icon } from "@rneui/themed";
 import { useSelector, useDispatch } from "react-redux";
 import { setActiveNav } from "../store/slices/bottomNavSlice";
 
-const BottomNav = () => {
+const BottomNav = ({ navigation }) => {
   const navOptions = useSelector((state) => state.bottomNav.bottomNavOptions);
   const dispatch = useDispatch()
   
   const setActiveBottomNav = (option) => {
     dispatch(setActiveNav(option))
+  }
+  const handleOnPress = (option) => {
+    setActiveBottomNav(option)
+    navigation.navigate(`${option.screen}`)
   }
   return (
     <View
@@ -20,7 +24,7 @@ const BottomNav = () => {
         <TouchableOpacity
           style={tw`items-center w-24 px-4 py-3 justify-center`}
           key={option.navName}
-          onPress={() => setActiveBottomNav(option)}
+          onPress={() => handleOnPress(option)}
         >
           <Icon
             name={`${option.iconName}`}
