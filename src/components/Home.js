@@ -22,7 +22,7 @@ const Home = () => {
                 resizeMode: "contain"
               }}
               source={
-                require("../assets/images/gas.png")
+                require("../assets/images/Gas.png")
               }
               />
               <View style={tw`p-2 mr-2 p-3 max-w-xs`}>
