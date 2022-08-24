@@ -18,7 +18,7 @@ const BottomNav = ({ navigation }) => {
   }
   return (
     <View
-      style={tw`flex-row justify-evenly mt-auto mb-3 bg-white rounded-3xl -mb-1`}
+      style={tw`flex-row justify-evenly absolute bottom-2 left-3  mb-3 bg-white rounded-3xl`}
     >
       {navOptions.map((option) => (
         <TouchableOpacity
