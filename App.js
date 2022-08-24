@@ -1,8 +1,6 @@
 import { Icon } from '@rneui/themed';
 import { useFonts } from 'expo-font';
 import RootNavigation from './src/navigation/RootNavigation';
-import { store } from './src/store'
-import { Provider } from 'react-redux'
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -13,8 +11,6 @@ export default function App() {
     'Inter-Thin': require('./assets/fonts/Inter-Thin.ttf'),
   });
   return (
-    <Provider store={store}>
-      <RootNavigation/>
-    </Provider>
+    <RootNavigation/>
     );
 }
