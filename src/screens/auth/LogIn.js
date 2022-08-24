@@ -33,6 +33,7 @@ export default function Login({navigation}) {
                         label="Phone Number or Email"
                         iconName="account"
                         placeholder="Enter Your Phone or Email "
+                        
                     />
                     <Input
                         label="Phone Number or Email"

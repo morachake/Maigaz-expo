@@ -2,9 +2,9 @@ import React from 'react'
 import { Image, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import { COLORS ,IMAGES} from '../../constants/Index';
-import ProfileBtn from './components/ProfileBtn';
-export default function Profile({navigation}) {
+import { COLORS, IMAGES } from '../constants/Index'
+import ProfileBtn from './ProfileBtn';
+export default function ProfileView() {
     return ( 
         <SafeAreaView style={{ backgroundColor: '#E5E5E5', flex: 1 }}> 
             <View >
@@ -30,11 +30,6 @@ export default function Profile({navigation}) {
                 <ProfileBtn
                     heading="Edit Profile"
                     iconName="account-edit"
-                    />
-                <ProfileBtn
-                        heading="New Product"
-                        iconName="logout"
-                        onPress={() => navigation.navigate('addProduct')}
                 />
                 <ProfileBtn
                     heading="Order History"

@@ -2,7 +2,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import React from 'react';
 import  Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import HomeScreen from '../screens/home/Index';
+import HomeScreen from '../screens/home/HomeScreen';
 import Favourites from '../screens/home/Favourites'
 import Cart from '../screens/home/Cart';
 import Profile from '../screens/home/Profile'
