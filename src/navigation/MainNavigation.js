@@ -2,10 +2,6 @@ import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import HomeScreen from "../screens/HomeScreen";
 
-
-import BottomTabs from "./BottomTabs";
-import NewProduct from "../screens/seller/Index";
-
 const Stack = createNativeStackNavigator();
 
 export default function MainNavigation () {
