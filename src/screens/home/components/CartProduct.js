@@ -10,7 +10,6 @@ export default function CartProduct() {
                 resizeMode="contain"
                 source={IMAGES.gas}
                 style={styles.image}
-
             />
             <View style={{ alignItems: 'center',justifyContent: 'space-evenly',marginHorizontal:10}}>
                 <View style={styles.topcont}>

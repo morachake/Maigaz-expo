@@ -1,4 +1,3 @@
-
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -25,10 +24,8 @@ export default function HomeScreen ({ navigation })  {
       <Stack.Screen name="ProfileView" component={ProfileView} options={{ headerShown: false }} />
           {/* <Stack.Screen name="HomeComponent" component={BottomTabs} options={{ headerShown: false }} /> */}
       </Stack.Navigator>
-      <BottomNav navigation={navigation} />
     </>
-  );
-};
+  )
+}
 
-
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({})
