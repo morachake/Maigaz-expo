@@ -1,12 +1,16 @@
 import React from 'react'
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import  Icon  from 'react-native-vector-icons/MaterialCommunityIcons'
-import { COLORS,IMAGES } from '../../../constants/Index'
+import { COLORS, IMAGES } from '../../../constants/Index'
+
 export default function CartProduct() {
     return (
         <View style={styles.cartProduct}>
             <Image
-                source={require('../../../assets/images/Gas.png')}
+                resizeMode="contain"
+                source={IMAGES.gas}
+                style={styles.image}
+
             />
             <View style={{ alignItems: 'center',justifyContent: 'space-evenly',marginHorizontal:10}}>
                 <View style={styles.topcont}>
@@ -33,6 +37,7 @@ export default function CartProduct() {
 
 const styles = StyleSheet.create({
     cartProduct: {
+        height: 120,
         backgroundColor: '#FFFFFF',
         borderRadius: 10,
         flexDirection: 'row',
@@ -44,6 +49,10 @@ const styles = StyleSheet.create({
     quantity: {
         fontSize: 13,
         
+    },
+    image: {
+        width:100,
+        height: '100%',
     },
     heart: {
         color:COLORS.primary
