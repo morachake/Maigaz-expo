@@ -9,6 +9,7 @@ export const COLORS={
 
 export const IMAGES = {
     user: require("../assets/images/user.png"),
-    gas: require("../assets/images/gas.png"),
-    Fav: require("../assets/images/History.png")
+    gas: require("../assets/images/Gas.png"),
+    Fav: require("../assets/images/History.png"),
+    gallon: require("../assets/images/gallon.png")
 }
