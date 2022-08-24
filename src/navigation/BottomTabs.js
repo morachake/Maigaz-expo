@@ -60,7 +60,7 @@ export default function BottomTabs() {
                     }}
                 })}
                 >
-            <Tab.Screen name="Home" component={DashNavigation} />
+            <Tab.Screen name="Home" component={HomeScreen} />
             <Tab.Screen name="Cart" component={Cart} />
             <Tab.Screen name="Favourites" component={Favourites} />   
             <Tab.Screen name="Profile" component={Profile} />
