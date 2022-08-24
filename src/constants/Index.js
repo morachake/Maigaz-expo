@@ -12,5 +12,4 @@ export const IMAGES = {
     gas: require("../assets/images/Gas.png"),
     Fav: require("../assets/images/History.png"),
     gallon: require("../assets/images/gallon.png")
-
 }

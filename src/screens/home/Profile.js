@@ -2,6 +2,7 @@ import React from 'react'
 import { Image, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import Header from '../../components/Header';
 import { COLORS ,IMAGES} from '../../constants/Index';
 import ProfileBtn from './components/ProfileBtn';
 export default function Profile({navigation}) {
