@@ -4,6 +4,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import MapView, { Marker } from "react-native-maps";
 import tw from "twrnc";
 import { Icon } from "@rneui/themed";
+import axios from "axios";
 
 const Map = () => {
   const [initialRegion, setInitialRegion] = useState({
@@ -13,9 +14,13 @@ const Map = () => {
     longitudeDelta: 0.0421,
   });
   const mapDimesionHeight = Math.floor(Dimensions.get("window").height) + 35;
-  const changeRegion = (e) => {
-    console.log(e.nativeEvent.coordinate)
-    // https://nominatim.openstreetmap.org/reverse?lat=37.77780779532411&lon=-122.41313572973013&format=json
+  const changeRegion = async ({ nativeEvent }) => {
+    const response = await axios.get(`https://nominatim.openstreetmap.org/reverse?lat=${nativeEvent.coordinate.latitude}&lon=${nativeEvent.coordinate.longitude}&format=json`)
+    console.log(response.data)
+    setInitialRegion({
+      latitude: nativeEvent.coordinate.latitude,
+      longitude: nativeEvent.coordinate.longitude
+    })
   }
   return (
     <View>
@@ -26,8 +31,8 @@ const Map = () => {
         }}
         mapType="mutedStandard"
         initialRegion={{
-          latitude: 37.78825,
-          longitude: -122.4324,
+          latitude: -4.057814509118897,
+          longitude: 39.66394716873765,
           latitudeDelta: 0.0922,
           longitudeDelta: 0.0421,
         }}
@@ -37,8 +42,8 @@ const Map = () => {
         <Marker
           draggable
           coordinate={{
-            latitude: 37.78825,
-            longitude: -122.4324,
+            latitude: initialRegion.latitude,
+            longitude: initialRegion.longitude,
           }}
         />
       </MapView>
