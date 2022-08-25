@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, Dimensions } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
-import MapView from "react-native-maps";
+import MapView, { Marker } from "react-native-maps";
 import tw from "twrnc";
 import { Icon } from "@rneui/themed";
 
@@ -21,7 +21,17 @@ const Map = () => {
           latitudeDelta: 0.0922,
           longitudeDelta: 0.0421,
         }}
-      />
+        onPress={(e)=> console.log(e.nativeEvent.coordinate)}
+      >
+          <Marker
+          draggable
+            coordinate={{
+              latitude: 37.78825,
+          longitude: -122.4324,
+            }}
+            onDragEnd={((e) => console.log(e.nativeEvent.coordinate))}
+          />
+      </MapView>
       <View
         style={tw`absolute top-16 bg-[#E5E5E5] p-3 w-12 h-12 rounded-full left-6 items-center justify-center`}
       >
