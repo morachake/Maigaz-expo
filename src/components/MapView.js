@@ -5,8 +5,12 @@ import MapView, { Marker } from "react-native-maps";
 import tw from "twrnc";
 import { Icon } from "@rneui/themed";
 import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { setIsLocationChoosen } from "../store/slices/mapSlice";
+import MapViewProducts from "./MapViewProducts";
 
 const Map = () => {
+  const dispatch = useDispatch()
   const [initialRegion, setInitialRegion] = useState({
     latitude: 37.78825,
     longitude: -122.4324,
@@ -20,42 +24,48 @@ const Map = () => {
       latitude: nativeEvent.coordinate.latitude,
       longitude: nativeEvent.coordinate.longitude
     })
+    dispatch(setIsLocationChoosen(true))
   }
+  const isLocationChoosen = useSelector(state => state.map.isLocationChoosen)
   return (
-    <View>
-      <MapView
-        style={{
-          width: Dimensions.get("window").width,
-          height: mapDimesionHeight,
-        }}
-        mapType="mutedStandard"
-        initialRegion={{
-          latitude: -4.057814509118897,
-          longitude: 39.66394716873765,
-          latitudeDelta: 0.0922,
-          longitudeDelta: 0.0421,
-        }}
-        onPress={(e) => changeRegion(e)}
-      >
-        <Marker
-          draggable
-          coordinate={{
-            latitude: initialRegion.latitude,
-            longitude: initialRegion.longitude,
+    <>
+      <View>
+        <MapView
+          style={{
+            width: Dimensions.get("window").width,
+            height: isLocationChoosen ? mapDimesionHeight / 2 : mapDimesionHeight
           }}
-        />
-      </MapView>
-      <View
-        style={tw`absolute top-16 bg-[#E5E5E5] p-3 w-12 h-12 rounded-full left-6 items-center justify-center`}
-      >
-        <Icon
-          name="chevron-left"
-          type="font-awesome-5"
-          size={25}
-          color="#3F38CB"
-        />
+          mapType="mutedStandard"
+          initialRegion={{
+            latitude: -4.057814509118897,
+            longitude: 39.66394716873765,
+            latitudeDelta: 0.0922,
+            longitudeDelta: 0.0421,
+          }}
+          onPress={(e) => changeRegion(e)}
+        >
+          <Marker
+            draggable
+            coordinate={{
+              latitude: initialRegion.latitude,
+              longitude: initialRegion.longitude,
+            }}
+          />
+        </MapView>
+        <View
+          style={tw`absolute top-16 bg-[#E5E5E5] p-3 w-12 h-12 rounded-full left-6 items-center justify-center`}
+        >
+          <Icon
+            name="chevron-left"
+            type="font-awesome-5"
+            size={25}
+            color="#3F38CB"
+          />
+        </View>
       </View>
-    </View>
+      {isLocationChoosen ? <MapViewProducts /> : (<></>)}
+      
+    </>
   );
 };
 

@@ -18,9 +18,8 @@ const HomeView = ({ navigation }) => {
     }
   ]
   const handleOnPress = (option) => {
-    // navigation.navigate('MapView')
-    console.log(option)
     dispatch(setMapProductType(option.type))
+    navigation.navigate('MapView')
   }
   return (
     <SafeAreaView style={tw`flex-1 bg-[#E5E5E5]`}>

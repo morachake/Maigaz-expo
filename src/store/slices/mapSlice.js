@@ -15,7 +15,7 @@ export const mapSlice = createSlice({
             console.log(action.payload)
         },
         setIsLocationChoosen: (state, action) => {
-            console.log(action.payload)
+            state.isLocationChoosen = action.payload
         }
     }
 })

@@ -6,8 +6,10 @@ import CartView from "../components/CartView";
 import FavoriteView from "../components/FavoriteView";
 import ProfileView from "../components/ProfileView";
 import React from "react";
+import { useSelector } from "react-redux";
 
 export default function HomeScreen({ navigation }) {
+  const isLocationChoosen = useSelector(state => state.map.isLocationChoosen) 
   const Stack = createNativeStackNavigator();
   return (
     <>
@@ -33,7 +35,7 @@ export default function HomeScreen({ navigation }) {
           options={{ headerShown: false }}
         />
       </Stack.Navigator>
-      <BottomNav navigation={navigation} />
+      { isLocationChoosen ? (<></>) : <BottomNav navigation={navigation} /> }
     </>
   );
 }
