@@ -22,6 +22,7 @@ const Map = () => {
           longitudeDelta: 0.0421,
         }}
         onPress={(e)=> console.log(e.nativeEvent.coordinate)}
+        onRegionChange={(region) => console.log(region)}
       >
           <Marker
           draggable
@@ -29,7 +30,6 @@ const Map = () => {
               latitude: 37.78825,
           longitude: -122.4324,
             }}
-            onDragEnd={((e) => console.log(e.nativeEvent.coordinate))}
           />
       </MapView>
       <View
