@@ -9,7 +9,7 @@ export const mapSlice = createSlice({
     },
     reducers: {
         setMapProductType: (state, action) => {
-            console.log(action.payload)
+            state.mapProductType = action.payload
         },
         setChoosenStateOrCity: (state, action) => {
             console.log(action.payload)

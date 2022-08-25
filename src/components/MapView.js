@@ -16,7 +16,6 @@ const Map = () => {
   const mapDimesionHeight = Math.floor(Dimensions.get("window").height) + 35;
   const changeRegion = async ({ nativeEvent }) => {
     const response = await axios.get(`https://nominatim.openstreetmap.org/reverse?lat=${nativeEvent.coordinate.latitude}&lon=${nativeEvent.coordinate.longitude}&format=json`)
-    console.log(response.data)
     setInitialRegion({
       latitude: nativeEvent.coordinate.latitude,
       longitude: nativeEvent.coordinate.longitude
@@ -37,7 +36,6 @@ const Map = () => {
           longitudeDelta: 0.0421,
         }}
         onPress={(e) => changeRegion(e)}
-        onRegionChange={(region) => console.log(region)}
       >
         <Marker
           draggable

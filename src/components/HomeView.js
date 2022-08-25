@@ -2,8 +2,11 @@ import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import tw from 'twrnc'
 import { SafeAreaView } from 'react-native-safe-area-context'
+import { useDispatch } from 'react-redux'
+import { setMapProductType } from '../store/slices/mapSlice'
 
 const HomeView = ({ navigation }) => {
+  const dispatch = useDispatch()
   const navOptions = [
     {
       type: 'gas',
@@ -14,6 +17,11 @@ const HomeView = ({ navigation }) => {
       image: require('../assets/images/gallon.png')
     }
   ]
+  const handleOnPress = (option) => {
+    // navigation.navigate('MapView')
+    console.log(option)
+    dispatch(setMapProductType(option.type))
+  }
   return (
     <SafeAreaView style={tw`flex-1 bg-[#E5E5E5]`}>
       <View>
@@ -36,7 +44,7 @@ const HomeView = ({ navigation }) => {
                   <Text>Get quality {option.type} convenietly at the tap of the button.</Text>
                   <TouchableOpacity
                     style={tw`my-3 bg-indigo-600 p-3 rounded-3xl w-32`}
-                    onPress={() => navigation.navigate('MapView')}
+                    onPress={() => handleOnPress(option)}
                   >
                     <Text style={tw`text-white text-center`}>Order Now</Text>
                   </TouchableOpacity>
