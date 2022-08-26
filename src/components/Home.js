@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import tw from 'twrnc'
@@ -59,3 +60,5 @@ const HomeView = ({ navigation }) => {
 export default HomeView
 
 const styles = StyleSheet.create({})
+=======
+>>>>>>> fdf01e4 (updates)

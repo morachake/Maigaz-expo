@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { View, Text, TouchableOpacity } from "react-native";
 import React from "react";
 import tw from "twrnc";
@@ -44,3 +45,5 @@ const BottomNav = ({ navigation }) => {
 };
 
 export default BottomNav;
+=======
+>>>>>>> fdf01e4 (updates)
