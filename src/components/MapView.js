@@ -9,7 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setIsLocationChoosen } from "../store/slices/mapSlice";
 import MapViewProducts from "./MapViewProducts";
 
-const Map = () => {
+export default function Map () {
   const dispatch = useDispatch()
   const [initialRegion, setInitialRegion] = useState({
     latitude: 37.78825,
@@ -69,6 +69,6 @@ const Map = () => {
   );
 };
 
-export default Map;
+
 
 const styles = StyleSheet.create({});

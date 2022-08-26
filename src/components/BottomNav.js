@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { View, Text, TouchableOpacity } from "react-native";
 import React from "react";
 import tw from "twrnc";
@@ -6,7 +5,7 @@ import { Icon } from "@rneui/themed";
 import { useSelector, useDispatch } from "react-redux";
 import { setActiveNav } from "../store/slices/bottomNavSlice";
 
-const BottomNav = ({ navigation }) => {
+export default function BottomNav ({ navigation })  {
   const navOptions = useSelector((state) => state.bottomNav.bottomNavOptions);
   const dispatch = useDispatch()
   
@@ -44,6 +43,3 @@ const BottomNav = ({ navigation }) => {
   );
 };
 
-export default BottomNav;
-=======
->>>>>>> fdf01e4 (updates)

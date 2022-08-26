@@ -5,7 +5,7 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import { useDispatch } from 'react-redux'
 import { setMapProductType } from '../store/slices/mapSlice'
 
-const HomeView = ({ navigation }) => {
+export default function HomeView ({ navigation }) {
   const dispatch = useDispatch()
   const navOptions = [
     {
@@ -56,6 +56,5 @@ const HomeView = ({ navigation }) => {
   )
 }
 
-export default HomeView
 
 const styles = StyleSheet.create({})
