@@ -5,7 +5,7 @@ import { Icon } from "@rneui/themed";
 import { useSelector, useDispatch } from "react-redux";
 import { setActiveNav } from "../store/slices/bottomNavSlice";
 
-const BottomNav = ({ navigation }) => {
+export default function BottomNav ({ navigation })  {
   const navOptions = useSelector((state) => state.bottomNav.bottomNavOptions);
   const dispatch = useDispatch()
   
@@ -43,4 +43,3 @@ const BottomNav = ({ navigation }) => {
   );
 };
 
-export default BottomNav;
