@@ -4,17 +4,18 @@ import tw from 'twrnc'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { useDispatch } from 'react-redux'
 import { setMapProductType } from '../store/slices/mapSlice'
+import {IMAGES} from '../constants/Index'
 
 export default function HomeView ({ navigation }) {
   const dispatch = useDispatch()
   const navOptions = [
     {
       type: 'gas',
-      image: require('../assets/images/Gas.png')
+      image: {IMAGES.gas}
     },
     {
       type: 'water',
-      image: require('../assets/images/gallon.png')
+      image: {IMAGES.gallon}
     }
   ]
   const handleOnPress = (option) => {

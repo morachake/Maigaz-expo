@@ -11,6 +11,7 @@ import { useSelector } from "react-redux";
 import mapSlice from "../store/slices/mapSlice";
 
 export default function HomeScreen({ navigation }) {
+  
   const isLocationChoosen = useSelector(state => state.map.isLocationChoosen) 
   const Stack = createNativeStackNavigator();
   return (
