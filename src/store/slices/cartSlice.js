@@ -3,14 +3,20 @@ import { createSlice } from "@reduxjs/toolkit";
 export const cartSlice = createSlice({
     name: 'cartSlice',
     initialState: {
-        cart: []
+        cartItems: []
     },
     reducers: {
-        addToCart: (state, action) => {
-            console.log(action)
+        addProductToCart: (state, action) => {
+            const availableProduct = state.cartItems.filter(cartItem => cartItem.id === action.payload.id)
+            if (availableProduct.length <= 0) {
+                const newCart = [...state.cartItems, action.payload]
+                state.cartItems = newCart
+            } else {
+                state.cartItems = state.cartItems
+            }
         }
     }
 })
 
-export const { addToCart } = cartSlice.actions
+export const { addProductToCart } = cartSlice.actions
 export default cartSlice.reducer
