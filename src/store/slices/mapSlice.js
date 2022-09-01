@@ -18,7 +18,9 @@ export const mapSlice = createSlice({
             state.isLocationChoosen = action.payload
         },
         resetInitialState: (state, action) => {
-            console.log('Reset Called')
+            state.choosenStateOrCity = ''
+            state.isLocationChoosen = false
+            state.mapProductType = ''
         }
     }
 })

@@ -1,12 +1,17 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import React from 'react'
+import React, { useEffect } from 'react'
 import tw from 'twrnc'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { useDispatch } from 'react-redux'
-import { setMapProductType } from '../store/slices/mapSlice'
+import { resetInitialState, setMapProductType } from '../store/slices/mapSlice'
+import { useIsFocused } from '@react-navigation/native'
 
 const HomeView = ({ navigation }) => {
   const dispatch = useDispatch()
+  const isFocused = useIsFocused()
+  useEffect(() => {
+    dispatch(resetInitialState(isFocused))
+  }, [isFocused])
   const navOptions = [
     {
       type: 'gas',
