@@ -17,7 +17,7 @@ export const mapSlice = createSlice({
         setIsLocationChoosen: (state, action) => {
             state.isLocationChoosen = action.payload
         },
-        resetInitialState: (state, action) => {
+        resetInitialState: (state) => {
             state.choosenStateOrCity = ''
             state.isLocationChoosen = false
             state.mapProductType = ''

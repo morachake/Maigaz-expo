@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Dimensions } from "react-native";
+import { StyleSheet, Text, View, Dimensions, TouchableOpacity } from "react-native";
 import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import MapView, { Marker } from "react-native-maps";
@@ -6,10 +6,10 @@ import tw from "twrnc";
 import { Icon } from "@rneui/themed";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
-import { setIsLocationChoosen } from "../store/slices/mapSlice";
+import { resetInitialState, setIsLocationChoosen } from "../store/slices/mapSlice";
 import MapViewProducts from "./MapViewProducts";
 
-const Map = () => {
+const Map = ({ navigation }) => {
   const dispatch = useDispatch()
   const [initialRegion, setInitialRegion] = useState({
     latitude: 37.78825,
@@ -27,6 +27,10 @@ const Map = () => {
     dispatch(setIsLocationChoosen(true))
   }
   const isLocationChoosen = useSelector(state => state.map.isLocationChoosen)
+  const navigateBack = () => {
+    navigation.navigate('HomeView')
+    dispatch(resetInitialState())
+  }
   return (
     <>
       <View>
@@ -52,8 +56,9 @@ const Map = () => {
             }}
           />
         </MapView>
-        <View
+        <TouchableOpacity
           style={tw`absolute top-16 bg-[#E5E5E5] p-3 w-12 h-12 rounded-full left-6 items-center justify-center`}
+          onPress={navigateBack}
         >
           <Icon
             name="chevron-left"
@@ -61,7 +66,7 @@ const Map = () => {
             size={25}
             color="#3F38CB"
           />
-        </View>
+        </TouchableOpacity>
       </View>
       {isLocationChoosen ? <MapViewProducts /> : (<></>)}
       
