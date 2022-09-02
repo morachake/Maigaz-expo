@@ -1,5 +1,5 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import React, { useEffect } from 'react'
+import React from 'react'
 import tw from 'twrnc'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { useDispatch } from 'react-redux'
@@ -10,10 +10,6 @@ import { IMAGES } from '../constants/Index'
 
 export default function HomeView ({ navigation }) {
   const dispatch = useDispatch()
-  const isFocused = useIsFocused()
-  useEffect(() => {
-    dispatch(resetInitialState(isFocused))
-  }, [isFocused])
   const navOptions = [
     {
       type: 'gas',
