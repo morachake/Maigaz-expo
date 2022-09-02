@@ -5,8 +5,11 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import { useDispatch } from 'react-redux'
 import { resetInitialState, setMapProductType } from '../store/slices/mapSlice'
 import { useIsFocused } from '@react-navigation/native'
+import { setMapProductType } from '../store/slices/mapSlice'
+import {IMAGES} from '../constants/Index'
 
-const HomeView = ({ navigation }) => {
+
+export default function HomeView ({ navigation }) {
   const dispatch = useDispatch()
   const isFocused = useIsFocused()
   useEffect(() => {
@@ -15,11 +18,11 @@ const HomeView = ({ navigation }) => {
   const navOptions = [
     {
       type: 'gas',
-      image: require('../assets/images/Gas.png')
+      image: {IMAGES.gas}
     },
     {
       type: 'water',
-      image: require('../assets/images/gallon.png')
+      image: {IMAGES.gallon}
     }
   ]
   const handleOnPress = (option) => {
@@ -61,6 +64,5 @@ const HomeView = ({ navigation }) => {
   )
 }
 
-export default HomeView
 
 const styles = StyleSheet.create({})

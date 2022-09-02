@@ -74,6 +74,6 @@ const Map = ({ navigation }) => {
   );
 };
 
-export default Map;
+
 
 const styles = StyleSheet.create({});
