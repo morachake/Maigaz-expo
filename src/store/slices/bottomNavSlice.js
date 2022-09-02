@@ -9,7 +9,7 @@ export const bottomNavReducer = createSlice({
         activeIconColor: "#3F38CB",
         inactiveIconColor: "#7C76F0",
         navName: "Home",
-        screen: "HomeView",
+        screen: "HomeComponent",
         isActive: true,
       },
       {

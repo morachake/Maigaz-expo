@@ -7,6 +7,7 @@ import FavoriteView from "../components/FavoriteView";
 import ProfileView from "../components/ProfileView";
 import MapView from "../components/MapView";
 import React from "react";
+import Home from "../components/Home";
 import { useSelector } from "react-redux";
 import mapSlice from "../store/slices/mapSlice";
 
@@ -18,8 +19,8 @@ export default function HomeScreen({ navigation }) {
     <>
       <Stack.Navigator>
         <Stack.Screen
-          name="HomeView"
-          component={HomeView}
+          name="HomeComponent"
+          component={Home}
           options={{ headerShown: false }}
         />
         <Stack.Screen
