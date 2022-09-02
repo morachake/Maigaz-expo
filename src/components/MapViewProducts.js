@@ -79,7 +79,7 @@ export default function MapViewProducts() {
                 >
                   <Text style={tw`text-white`}>Add To Cart</Text>
                 </TouchableOpacity>
-                {cart &&
+                {/* {cart &&
                   cart.map((cartItem) => (
                     <View
                       style={tw`flex-row items-center justify-between my-2`}
@@ -106,7 +106,7 @@ export default function MapViewProducts() {
                         />
                       </TouchableOpacity>
                     </View>
-                  ))}
+                  ))} */}
               </View>
             );
           })}
