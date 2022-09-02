@@ -16,9 +16,14 @@ export const mapSlice = createSlice({
         },
         setIsLocationChoosen: (state, action) => {
             state.isLocationChoosen = action.payload
+        },
+        resetInitialState: (state, action) => {
+            state.choosenStateOrCity = ''
+            state.isLocationChoosen = false
+            state.mapProductType = ''
         }
     }
 })
 
-export const { setChoosenStateOrCity, setIsLocationChoosen, setMapProductType } = mapSlice.actions
+export const { setChoosenStateOrCity, setIsLocationChoosen, setMapProductType, resetInitialState } = mapSlice.actions
 export default mapSlice.reducer
