@@ -1,28 +1,23 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import React, { useEffect } from 'react'
+import React from 'react'
 import tw from 'twrnc'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { useDispatch } from 'react-redux'
 import { resetInitialState, setMapProductType } from '../store/slices/mapSlice'
 import { useIsFocused } from '@react-navigation/native'
-import { setMapProductType } from '../store/slices/mapSlice'
-import {IMAGES} from '../constants/Index'
+import { IMAGES } from '../constants/Index'
 
 
 export default function HomeView ({ navigation }) {
   const dispatch = useDispatch()
-  const isFocused = useIsFocused()
-  useEffect(() => {
-    dispatch(resetInitialState(isFocused))
-  }, [isFocused])
   const navOptions = [
     {
       type: 'gas',
-      image: {IMAGES.gas}
+      image: IMAGES.gas
     },
     {
       type: 'water',
-      image: {IMAGES.gallon}
+      image: IMAGES.gallon
     }
   ]
   const handleOnPress = (option) => {
